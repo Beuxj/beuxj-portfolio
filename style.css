@@ -95,7 +95,7 @@ body {
     margin-top: 10px;
 }
 
-/* 🔥 VIEW MY WORK BUTTON (FIXED) */
+/* BUTTON */
 .hero button {
     margin-top: 30px;
     padding: 12px 28px;
@@ -121,6 +121,7 @@ body {
 /* SECTIONS */
 section {
     padding: 90px 0;
+    scroll-margin-top: 80px;
 }
 
 h3 {
@@ -137,9 +138,12 @@ h3 {
     gap: 30px;
 }
 
-/* 🔥 GLASS CARDS */
+/* 🔥 GLASS CARDS (FIXED + ENHANCED) */
 .project-card,
 .what-card {
+    position: relative; /* FIXED */
+    text-align: center;
+
     background: rgba(255,255,255,0.03);
     border-radius: 16px;
     padding: 25px;
@@ -150,25 +154,37 @@ h3 {
     transition: all 0.3s ease;
 }
 
-/* Glow edge */
+/* Glow overlay */
 .project-card::before,
 .what-card::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 16px;
-    pointer-events: none;
+    background: radial-gradient(circle at top, rgba(209,239,201,0.15), transparent 70%);
+    opacity: 0;
+    transition: 0.3s;
 }
 
-/* Hover effect */
+/* Hover */
 .project-card:hover,
 .what-card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-8px) scale(1.02);
     border-color: rgba(209,239,201,0.25);
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
 
+.project-card:hover::before,
+.what-card:hover::before {
+    opacity: 1;
+}
+
 /* SKILLS */
+.skill-bars {
+    max-width: 500px;
+    margin: auto;
+}
+
 .skill {
     margin-bottom: 22px;
 }
@@ -187,7 +203,6 @@ h3 {
     overflow: hidden;
 }
 
-/* 🔥 BETTER SKILL BAR */
 .progress {
     width: 0;
     height: 100%;
@@ -231,11 +246,11 @@ footer {
     color: var(--muted);
 }
 
-/* ANIMATIONS */
+/* ANIMATIONS (RESTORED) */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: 0.8s;
+    transition: 0.8s ease;
 }
 
 .reveal.active {
