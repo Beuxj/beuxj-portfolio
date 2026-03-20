@@ -1,18 +1,18 @@
-// Smooth scroll (keep yours)
+// ================= SMOOTH SCROLL =================
 function scrollToSection(id) {
     document.getElementById(id).scrollIntoView({
         behavior: "smooth"
     });
 }
 
-/* SCROLL REVEAL */
+// ================= SCROLL REVEAL =================
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
     const windowHeight = window.innerHeight;
 
     reveals.forEach(el => {
-        if (el.classList.contains("active")) return; // ✅ prevent repeat
+        if (el.classList.contains("active")) return;
 
         const top = el.getBoundingClientRect().top;
 
@@ -22,25 +22,21 @@ function revealOnScroll() {
     });
 }
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+/* ================= SKILL BAR ANIMATION ================= */
+const skillBars = document.querySelectorAll(".skill-fill");
 
-
-/* SKILL ANIMATION */
-const bars = document.querySelectorAll(".progress");
-
-function animateSkills() {
-    bars.forEach(bar => {
-        if (bar.classList.contains("animated")) return; // ✅ run once
-
+function animateSkillCards() {
+    skillBars.forEach(bar => {
         const top = bar.getBoundingClientRect().top;
 
         if (top < window.innerHeight - 50) {
             bar.style.width = bar.dataset.width;
-            bar.classList.add("animated"); // mark done
         }
     });
 }
 
-window.addEventListener("scroll", animateSkills);
-window.addEventListener("load", animateSkills);
+window.addEventListener("scroll", animateSkillCards);
+window.addEventListener("load", animateSkillCards);
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
