@@ -1,53 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Godot Demos | Beuxj</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BEUXJ — Godot Demos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/godot.css"/>
 </head>
-<body>
+<body class="page-godot">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="container nav-container">
-        <div class="logo-container" id="logo">
-            <img src="../assets/logo/BEUXJ.png" alt="logo">
-            <span class="brand-name">beuxj</span>
+  <header class="topnav">
+    <div class="nav-brand">BEUXJ<span class="nav-brand-ext">.DEV</span></div>
+    <nav class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html#projects" class="nav-link active">Projects</a>
+      <a href="../index.html#arsenal" class="nav-link">Arsenal</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-tag"><span class="blink-dot" style="background:var(--gd-accent);box-shadow:0 0 6px var(--gd-accent)"></span> GODOT ENGINE / RUNTIME ACTIVE</div>
+  </header>
+
+  <main class="content">
+
+    <section class="sub-hero gd-hero">
+      <div class="sub-hero-bg">
+        <div class="gd-scanlines"></div>
+        <div class="gd-terminal-bg" id="gdTerminal"></div>
+        <div class="gd-vignette"></div>
+      </div>
+      <div class="sub-hero-inner">
+        <div class="sub-breadcrumb">
+          <a href="../index.html">HOME</a>
+          <span class="bc-sep">›</span>
+          <a href="../index.html#projects">PROJECTS</a>
+          <span class="bc-sep">›</span>
+          <span class="bc-cur" style="color:var(--gd-accent)">GODOT DEMOS</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- PROJECT GRID -->
-<section class="reveal divider">
-    <div class="container">
-        <h3>Godot Demos</h3>
-        <div class="projects-grid">
-            <!-- Placeholder project cards -->
-            <div class="project-card godot-demo">
-                <div class="project-overlay">
-                    <h4>Demo 01</h4>
-                    <p>Small gameplay prototype or interactive system.</p>
-                    <button>View Demo</button>
-                </div>
-            </div>
-            <div class="project-card godot-demo">
-                <div class="project-overlay">
-                    <h4>Demo 02</h4>
-                    <p>Experimental mechanic or scene showcase.</p>
-                    <button>View Demo</button>
-                </div>
-            </div>
+        <div class="sub-page-tag" style="color:var(--gd-accent)">
+          <span class="sp-tag-dot gd-dot"></span>
+          DEMO VAULT // GODOT 4.x
         </div>
-    </div>
-</section>
+        <h1 class="sub-title gd-title">
+          Godot<br/><span class="gd-accent-text">Demos</span>
+        </h1>
+        <p class="sub-desc">Gameplay prototypes, experimental mechanics, and system-level tests. Every demo is a live node tree — proof of concept in motion.</p>
+        <div class="sub-stats">
+          <div class="stat-item"><div class="stat-val gd-val">4.x</div><div class="stat-label">ENGINE</div></div>
+          <div class="stat-item"><div class="stat-val gd-val">GDScript</div><div class="stat-label">LANGUAGE</div></div>
+          <div class="stat-item"><div class="stat-val gd-val">Forward+</div><div class="stat-label">RENDERER</div></div>
+          <div class="stat-item"><div class="stat-val gd-val">MIT</div><div class="stat-label">LICENSE</div></div>
+        </div>
+      </div>
+      <div class="sub-corner-tag">DEMO_VAULT // 2026</div>
+    </section>
 
-<script src="../js/script.js"></script>
+    <div class="gd-console">
+      <div class="console-line"><span class="cl-prompt">▶</span><span class="cl-cmd">scene.instantiate()</span><span class="cl-ok">OK</span></div>
+      <div class="console-line"><span class="cl-prompt">▶</span><span class="cl-cmd">physics_process(delta)</span><span class="cl-ok">RUNNING</span></div>
+      <div class="console-line"><span class="cl-prompt">▶</span><span class="cl-cmd">emit_signal("demo_loaded")</span><span class="cl-ok">EMITTED</span></div>
+      <div class="console-right">ENGINE: GODOT 4.x // BUILD: STABLE</div>
+    </div>
+
+    <section class="gallery-section gd-gallery">
+      <div class="demo-grid">
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_01</div><div class="dc-status gd-status-active">● ACTIVE</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-01.jpg" alt="Cave Movement System"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Cave Movement System</h3>
+            <p class="demo-desc">First-person movement with dynamic crouch, ledge-grab, and rope traversal. Built for the cave escape project.</p>
+            <div class="demo-tags"><span class="gd-tag">MOVEMENT</span><span class="gd-tag">PHYSICS</span><span class="gd-tag">FPS</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>47</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>8</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_02</div><div class="dc-status gd-status-wip">◌ IN DEV</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-02.jpg" alt="Torch & Light System"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Torch &amp; Light System</h3>
+            <p class="demo-desc">Dynamic torch with flicker shader, fuel depletion, and enemy AI awareness tied to light radius.</p>
+            <div class="demo-tags"><span class="gd-tag">LIGHTING</span><span class="gd-tag">SHADER</span><span class="gd-tag">AI</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>31</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>5</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_03</div><div class="dc-status gd-status-active">● ACTIVE</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-03.jpg" alt="Inventory System"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Inventory System</h3>
+            <p class="demo-desc">Grid-based inventory with drag-drop, item stacking, and contextual interaction menus built entirely in Godot UI nodes.</p>
+            <div class="demo-tags"><span class="gd-tag">UI/UX</span><span class="gd-tag">INVENTORY</span><span class="gd-tag">SIGNALS</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>62</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>11</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_04</div><div class="dc-status gd-status-wip">◌ IN DEV</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-04.jpg" alt="Procedural Cave Gen"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Procedural Cave Gen</h3>
+            <p class="demo-desc">Cellular automata-based cave generation with automatic collision baking and NavMesh integration for AI pathfinding.</p>
+            <div class="demo-tags"><span class="gd-tag">PCG</span><span class="gd-tag">NAVMESH</span><span class="gd-tag">ALGORITHM</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>28</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>6</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_05</div><div class="dc-status gd-status-active">● ACTIVE</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-05.jpg" alt="Sound Atmosphere System"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Sound Atmosphere System</h3>
+            <p class="demo-desc">Spatial audio manager with zone-based ambient layers, reverb zones, and procedural drip/echo generation for underground environments.</p>
+            <div class="demo-tags"><span class="gd-tag">AUDIO</span><span class="gd-tag">SPATIAL</span><span class="gd-tag">ATMOSPHERE</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>19</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>4</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+        <div class="demo-card reveal">
+          <div class="demo-card-header"><div class="dc-index">DEMO_06</div><div class="dc-status gd-status-wip">◌ IN DEV</div></div>
+          <div class="demo-thumb"><img src="../assets/gd-06.jpg" alt="Enemy Sight AI"/><div class="demo-play-btn">▶</div></div>
+          <div class="demo-body">
+            <h3 class="demo-title">Enemy Sight AI</h3>
+            <p class="demo-desc">Raycasted cone-of-sight detection with state machine (patrol/alert/chase) and noise-reactive behaviour for cave environments.</p>
+            <div class="demo-tags"><span class="gd-tag">AI</span><span class="gd-tag">STATE MACHINE</span><span class="gd-tag">RAYCAST</span></div>
+            <div class="demo-meta"><span class="dm-item"><span class="dm-label">NODES</span>38</span><span class="dm-item"><span class="dm-label">SCRIPTS</span>9</span><span class="dm-item"><span class="dm-label">FPS</span>60+</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">← <a href="../index.html" style="color:var(--gd-accent);text-decoration:none;">BACK TO HOME</a></div>
+    <div class="footer-right"><span>GODOT DEMOS // VAULT</span><span>© 2026 BEUXJ</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/godot.js"></script>
 </body>
 </html>

@@ -1,86 +1,115 @@
-// ================= SMOOTH SCROLL =================
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({
-        behavior: "smooth"
-    });
+/* =============================================
+   BEUXJ.DEV — JavaScript
+   ============================================= */
+
+// ── Scrolled nav gold line ─────────────────────
+const topnav = document.querySelector('.topnav');
+window.addEventListener('scroll', () => {
+  topnav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// ── Active nav on scroll ──────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks  = document.querySelectorAll('.nav-link');
+
+function setActive() {
+  let current = '';
+  sections.forEach(sec => {
+    const top = sec.offsetTop - 80;
+    if (window.scrollY >= top) current = sec.getAttribute('id');
+  });
+  navLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
 }
+window.addEventListener('scroll', setActive, { passive: true });
+setActive();
 
-// ================= SCROLL REVEAL =================
-const reveals = document.querySelectorAll(".reveal");
+// ── Scroll reveal ─────────────────────────────
+const reveals = document.querySelectorAll(
+  '.project-card, .skill-card, .pipeline-step, .mission-item, .section-title, .diag-card, .contact-card, .contact-elsewhere'
+);
+reveals.forEach(el => el.classList.add('reveal'));
 
-function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-
-    reveals.forEach(el => {
-        if (el.classList.contains("active")) return;
-
-        const top = el.getBoundingClientRect().top;
-
-        if (top < windowHeight - 100) {
-            el.classList.add("active");
-        }
-    });
-}
-
-// ================= SKILL BAR ANIMATION =================
-const skillBars = document.querySelectorAll(".skill-fill");
-
-function animateSkillCards() {
-    skillBars.forEach(bar => {
-        const top = bar.getBoundingClientRect().top;
-
-        if (top < window.innerHeight - 50) {
-            bar.style.width = bar.dataset.width;
-        }
-    });
-}
-
-// ================= EASTER EGG / LOGO BIO =================
-document.addEventListener('DOMContentLoaded', () => {
-    const logo = document.getElementById('logo');        // large hero logo
-    const popup = document.getElementById('bio-popup');  // popup div
-    const closeBtn = document.getElementById('close-popup');
-    const bioText = document.getElementById('bio-text');
-
-    const bioMessage = "Hi, I’m Ritvik Paul. Beuxj is my identity as an indie game developer and 3D environment artist, crafting immersive worlds in Blender and UE5.";
-    let index = 0;
-
-    // Typing effect
-    function typeText() {
-        if (index < bioMessage.length) {
-            bioText.innerHTML += bioMessage.charAt(index);
-            index++;
-            setTimeout(typeText, 40); // typing speed
-        }
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
     }
+  }),
+  { threshold: 0.12 }
+);
+reveals.forEach(el => observer.observe(el));
 
-    // Click logo to open bio popup
-    logo.addEventListener('click', () => {
-        popup.classList.add('show');
-        bioText.innerHTML = '';
-        index = 0;
-        typeText();
-    });
-
-    // Close button
-    closeBtn.addEventListener('click', () => {
-        popup.classList.remove('show');
-    });
-
-    // Click outside popup to close
-    window.addEventListener('click', (e) => {
-        if (e.target === popup) popup.classList.remove('show');
-    });
+// ── Stagger child reveals ─────────────────────
+document.querySelectorAll('.projects-grid, .skill-cards-grid').forEach(grid => {
+  Array.from(grid.children).forEach((child, i) => {
+    child.style.transitionDelay = `${i * 0.1}s`;
+  });
 });
 
-// Redirect to a new page
-function redirectTo(url) {
-    window.location.href = url;
+// ── Skill bars animate on enter ──────────────
+const barObserver = new IntersectionObserver(
+  entries => entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.classList.add('animated');
+      });
+      barObserver.unobserve(e.target);
+    }
+  }),
+  { threshold: 0.3 }
+);
+document.querySelectorAll('.skill-bars').forEach(el => barObserver.observe(el));
+
+// ── Cursor trail (subtle) ─────────────────────
+let cx = 0, cy = 0;
+const cursor = document.createElement('div');
+cursor.style.cssText = `
+  position: fixed; pointer-events: none; z-index: 9999;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(200,184,130,0.6);
+  transform: translate(-50%,-50%);
+  transition: opacity 0.3s;
+  mix-blend-mode: screen;
+`;
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', e => {
+  cx = e.clientX; cy = e.clientY;
+  cursor.style.left = cx + 'px';
+  cursor.style.top  = cy + 'px';
+});
+
+// ── Smooth scroll ─────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ── Typing effect on hero tag ─────────────────
+const heroTag = document.querySelector('.hero-tag');
+if (heroTag) {
+  const text = heroTag.textContent.trim();
+  heroTag.textContent = '';
+  heroTag.style.opacity = '1';
+  const dot = document.createElement('span');
+  dot.className = 'tag-dot';
+  heroTag.appendChild(dot);
+  const span = document.createElement('span');
+  heroTag.appendChild(span);
+  let i = 0;
+  const type = () => {
+    if (i < text.length) {
+      span.textContent += text[i++];
+      setTimeout(type, 35);
+    }
+  };
+  setTimeout(type, 600);
 }
-
-// ================= EVENT LISTENERS =================
-window.addEventListener("scroll", animateSkillCards);
-window.addEventListener("load", animateSkillCards);
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);

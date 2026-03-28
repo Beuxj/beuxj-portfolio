@@ -1,53 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Games | Beuxj</title>
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BEUXJ — Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"/>
+  <link rel="stylesheet" href="../css/games.css"/>
 </head>
-<body>
+<body class="page-games">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="container nav-container">
-        <div class="logo-container" id="logo">
-            <img src="../assets/logo/BEUXJ.png" alt="logo">
-            <span class="brand-name">beuxj</span>
+  <header class="topnav">
+    <div class="nav-brand">BEUXJ<span class="nav-brand-ext">.DEV</span></div>
+    <nav class="nav-links">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html#projects" class="nav-link active">Projects</a>
+      <a href="../index.html#arsenal" class="nav-link">Arsenal</a>
+      <a href="../index.html#contact" class="nav-link">Contact</a>
+    </nav>
+    <div class="nav-tag"><span class="blink-dot" style="background:var(--gm-accent);box-shadow:0 0 6px var(--gm-accent)"></span> GAME VAULT / PLAYABLE</div>
+  </header>
+
+  <main class="content">
+
+    <section class="sub-hero gm-hero">
+      <div class="sub-hero-bg">
+        <div class="gm-noise-overlay"></div>
+        <div class="gm-hex-grid"></div>
+        <div class="gm-radial"></div>
+        <div class="gm-vignette"></div>
+      </div>
+      <div class="sub-hero-inner">
+        <div class="sub-breadcrumb">
+          <a href="../index.html">HOME</a>
+          <span class="bc-sep">›</span>
+          <a href="../index.html#projects">PROJECTS</a>
+          <span class="bc-sep">›</span>
+          <span class="bc-cur" style="color:var(--gm-accent)">GAMES</span>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#skills">Skills</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
-
-<!-- PROJECT GRID -->
-<section class="reveal divider">
-    <div class="container">
-        <h3>Games</h3>
-        <div class="projects-grid">
-            <!-- Placeholder project cards -->
-            <div class="project-card games">
-                <div class="project-overlay">
-                    <h4>Game 01</h4>
-                    <p>Playable game showcasing immersive environments.</p>
-                    <button>Play Game</button>
-                </div>
-            </div>
-            <div class="project-card games">
-                <div class="project-overlay">
-                    <h4>Game 02</h4>
-                    <p>Short demo or interactive experience.</p>
-                    <button>Play Game</button>
-                </div>
-            </div>
+        <div class="sub-page-tag" style="color:var(--gm-accent)">
+          <span class="sp-tag-dot gm-dot"></span>
+          GAME VAULT // PLAYABLE BUILDS
         </div>
-    </div>
-</section>
+        <h1 class="sub-title gm-title">
+          Games<br/><span class="gm-accent-text">&amp; Worlds</span>
+        </h1>
+        <p class="sub-desc">Completed and playable games showcasing immersive environments, atmospheric storytelling, and polished gameplay. Every world built to be explored.</p>
+        <div class="sub-stats">
+          <div class="stat-item"><div class="stat-val gm-val">2</div><div class="stat-label">RELEASED</div></div>
+          <div class="stat-item"><div class="stat-val gm-val">1</div><div class="stat-label">IN DEV</div></div>
+          <div class="stat-item"><div class="stat-val gm-val">PC</div><div class="stat-label">PLATFORM</div></div>
+          <div class="stat-item"><div class="stat-val gm-val">Itch.io</div><div class="stat-label">HOST</div></div>
+        </div>
+      </div>
+      <div class="sub-corner-tag">GAME_VAULT // 2026</div>
+    </section>
 
-<script src="../js/script.js"></script>
+    <section class="featured-section">
+      <div class="featured-label">— FEATURED PROJECT</div>
+      <div class="featured-game">
+        <div class="fg-media">
+          <img src="../assets/gm-featured.jpg" alt="Cave Escape"/>
+          <div class="fg-media-overlay"><div class="fg-badge">IN DEVELOPMENT</div></div>
+        </div>
+        <div class="fg-content">
+          <div class="fg-tag">CURRENT PROJECT // UE5 + GODOT</div>
+          <h2 class="fg-title">Cave Escape</h2>
+          <p class="fg-desc">A realistic first-person survival game set deep underground. The player wakes up trapped in a cave system with no memory, limited light, and strange sounds echoing through the tunnels. Navigate, solve, survive.</p>
+          <div class="fg-features">
+            <div class="fg-feat"><span class="ff-dot"></span>Dynamic torch system with fuel &amp; flicker</div>
+            <div class="fg-feat"><span class="ff-dot"></span>Procedurally-generated cave passages</div>
+            <div class="fg-feat"><span class="ff-dot"></span>Atmospheric spatial audio engine</div>
+            <div class="fg-feat"><span class="ff-dot"></span>Enemy AI with light-awareness</div>
+          </div>
+          <div class="fg-cta">
+            <a href="#" class="gm-btn-primary">WISHLIST</a>
+            <a href="#" class="gm-btn-ghost">DEV LOG</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section gm-gallery">
+      <div class="section-header" style="margin-bottom:40px;">
+        <div class="section-label" style="color:var(--gm-accent)">— ALL GAMES</div>
+        <h2 class="section-title">Full Catalog</h2>
+      </div>
+      <div class="games-grid">
+        <div class="game-card reveal">
+          <div class="gc-media"><img src="../assets/gm-01.jpg" alt="Cave Escape"/><div class="gc-overlay"><div class="gc-platform">PC</div></div></div>
+          <div class="gc-body">
+            <div class="gc-header"><h3 class="gc-title">Cave Escape</h3><span class="gc-status gm-status-dev">IN DEV</span></div>
+            <p class="gc-desc">First-person survival horror in procedurally generated caves. The flagship project.</p>
+            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">UE5 + Godot 4</span></div>
+            <a href="#" class="gc-btn">VIEW PROJECT</a>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="gc-media"><img src="../assets/gm-02.jpg" alt="Descent"/><div class="gc-overlay"><div class="gc-platform">PC / WEB</div></div></div>
+          <div class="gc-body">
+            <div class="gc-header"><h3 class="gc-title">Descent</h3><span class="gc-status gm-status-live">LIVE</span></div>
+            <p class="gc-desc">A short atmospheric game jam entry exploring vertical cave traversal and environment storytelling.</p>
+            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div>
+            <a href="#" class="gc-btn">PLAY NOW</a>
+          </div>
+        </div>
+        <div class="game-card reveal">
+          <div class="gc-media"><img src="../assets/gm-03.jpg" alt="The Last Light"/><div class="gc-overlay"><div class="gc-platform">PC</div></div></div>
+          <div class="gc-body">
+            <div class="gc-header"><h3 class="gc-title">The Last Light</h3><span class="gc-status gm-status-live">LIVE</span></div>
+            <p class="gc-desc">A puzzle game built around a single dying torch. Manage your fuel, solve the route, survive the dark.</p>
+            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div>
+            <a href="#" class="gc-btn">PLAY NOW</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-left">← <a href="../index.html" style="color:var(--gm-accent);text-decoration:none;">BACK TO HOME</a></div>
+    <div class="footer-right"><span>GAMES // VAULT</span><span>© 2026 BEUXJ</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
 </body>
 </html>
