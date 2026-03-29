@@ -159,3 +159,15 @@ body.page-godot .nav-link::after { background: var(--gd-accent); }
   .gd-console { padding: 12px 28px; gap: 16px; }
   .console-right { display: none; }
 }
+
+/* ── Hero color fixes ── */
+body.page-godot .bc-cur { color: var(--gd-accent); }
+body.page-godot .sub-page-tag { color: var(--gd-accent); }
+
+/* ── Gallery padding ── */
+.gd-gallery { padding: 52px 72px 88px; background: var(--bg); }
+
+@media (max-width: 900px) {
+  .gd-gallery { padding: 40px 24px 60px; }
+  .demo-grid  { grid-template-columns: 1fr; }
+}

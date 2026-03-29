@@ -206,3 +206,25 @@ body.page-games .nav-link::after { background: var(--gm-accent); }
   .games-grid { grid-template-columns: 1fr; }
   .gm-gallery { padding: 40px 28px 60px; }
 }
+
+/* ── HERO bc-cur color fix ── */
+body.page-games .bc-cur { color: var(--gm-accent); }
+body.page-games .sub-page-tag { color: var(--gm-accent); }
+
+/* ── Gallery section padding fix ── */
+.gm-gallery { background: var(--bg); }
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .featured-game { grid-template-columns: 1fr; }
+  .fg-media { height: 260px; }
+  .fg-content { padding: 28px; }
+  .featured-section { padding: 0 24px; }
+  .games-grid { grid-template-columns: 1fr; padding: 0 24px 60px !important; }
+  .gm-gallery .section-header { padding: 48px 24px 0 !important; }
+}

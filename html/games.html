@@ -13,6 +13,10 @@
 <body class="page-games">
 
   <header class="topnav">
+    <div class="nav-logo">
+      <img src="../assets/logo/BEUXJ.png" alt="BEUXJ Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <span class="nav-logo-fallback" style="display:none">BX</span>
+    </div>
     <div class="nav-brand">BEUXJ<span class="nav-brand-ext">.DEV</span></div>
     <nav class="nav-links">
       <a href="../index.html" class="nav-link">Home</a>
@@ -25,6 +29,7 @@
 
   <main class="content">
 
+    <!-- HERO -->
     <section class="sub-hero gm-hero">
       <div class="sub-hero-bg">
         <div class="gm-noise-overlay"></div>
@@ -34,19 +39,14 @@
       </div>
       <div class="sub-hero-inner">
         <div class="sub-breadcrumb">
-          <a href="../index.html">HOME</a>
-          <span class="bc-sep">›</span>
-          <a href="../index.html#projects">PROJECTS</a>
-          <span class="bc-sep">›</span>
-          <span class="bc-cur" style="color:var(--gm-accent)">GAMES</span>
+          <a href="../index.html">HOME</a><span class="bc-sep">›</span>
+          <a href="../index.html#projects">PROJECTS</a><span class="bc-sep">›</span>
+          <span class="bc-cur">GAMES</span>
         </div>
-        <div class="sub-page-tag" style="color:var(--gm-accent)">
-          <span class="sp-tag-dot gm-dot"></span>
-          GAME VAULT // PLAYABLE BUILDS
+        <div class="sub-page-tag">
+          <span class="sp-tag-dot gm-dot"></span>GAME VAULT // PLAYABLE BUILDS
         </div>
-        <h1 class="sub-title gm-title">
-          Games<br/><span class="gm-accent-text">&amp; Worlds</span>
-        </h1>
+        <h1 class="sub-title">Games<br/><span class="gm-accent-text">&amp; Worlds</span></h1>
         <p class="sub-desc">Completed and playable games showcasing immersive environments, atmospheric storytelling, and polished gameplay. Every world built to be explored.</p>
         <div class="sub-stats">
           <div class="stat-item"><div class="stat-val gm-val">2</div><div class="stat-label">RELEASED</div></div>
@@ -58,6 +58,7 @@
       <div class="sub-corner-tag">GAME_VAULT // 2026</div>
     </section>
 
+    <!-- FEATURED -->
     <section class="featured-section">
       <div class="featured-label">— FEATURED PROJECT</div>
       <div class="featured-game">
@@ -83,38 +84,24 @@
       </div>
     </section>
 
-    <section class="gallery-section gm-gallery">
-      <div class="section-header" style="margin-bottom:40px;">
+    <!-- ALL GAMES -->
+    <section class="gm-gallery">
+      <div class="section-header" style="padding:64px 72px 0;margin-bottom:40px;">
         <div class="section-label" style="color:var(--gm-accent)">— ALL GAMES</div>
         <h2 class="section-title">Full Catalog</h2>
       </div>
-      <div class="games-grid">
+      <div class="games-grid" style="padding:0 72px 88px;">
         <div class="game-card reveal">
           <div class="gc-media"><img src="../assets/gm-01.jpg" alt="Cave Escape"/><div class="gc-overlay"><div class="gc-platform">PC</div></div></div>
-          <div class="gc-body">
-            <div class="gc-header"><h3 class="gc-title">Cave Escape</h3><span class="gc-status gm-status-dev">IN DEV</span></div>
-            <p class="gc-desc">First-person survival horror in procedurally generated caves. The flagship project.</p>
-            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">UE5 + Godot 4</span></div>
-            <a href="#" class="gc-btn">VIEW PROJECT</a>
-          </div>
+          <div class="gc-body"><div class="gc-header"><h3 class="gc-title">Cave Escape</h3><span class="gc-status gm-status-dev">IN DEV</span></div><p class="gc-desc">First-person survival horror in procedurally generated caves. The flagship project.</p><div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">UE5 + Godot 4</span></div><a href="#" class="gc-btn">VIEW PROJECT</a></div>
         </div>
         <div class="game-card reveal">
           <div class="gc-media"><img src="../assets/gm-02.jpg" alt="Descent"/><div class="gc-overlay"><div class="gc-platform">PC / WEB</div></div></div>
-          <div class="gc-body">
-            <div class="gc-header"><h3 class="gc-title">Descent</h3><span class="gc-status gm-status-live">LIVE</span></div>
-            <p class="gc-desc">A short atmospheric game jam entry exploring vertical cave traversal and environment storytelling.</p>
-            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div>
-            <a href="#" class="gc-btn">PLAY NOW</a>
-          </div>
+          <div class="gc-body"><div class="gc-header"><h3 class="gc-title">Descent</h3><span class="gc-status gm-status-live">LIVE</span></div><p class="gc-desc">A short atmospheric game jam entry exploring vertical cave traversal and environment storytelling.</p><div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div><a href="#" class="gc-btn">PLAY NOW</a></div>
         </div>
         <div class="game-card reveal">
           <div class="gc-media"><img src="../assets/gm-03.jpg" alt="The Last Light"/><div class="gc-overlay"><div class="gc-platform">PC</div></div></div>
-          <div class="gc-body">
-            <div class="gc-header"><h3 class="gc-title">The Last Light</h3><span class="gc-status gm-status-live">LIVE</span></div>
-            <p class="gc-desc">A puzzle game built around a single dying torch. Manage your fuel, solve the route, survive the dark.</p>
-            <div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div>
-            <a href="#" class="gc-btn">PLAY NOW</a>
-          </div>
+          <div class="gc-body"><div class="gc-header"><h3 class="gc-title">The Last Light</h3><span class="gc-status gm-status-live">LIVE</span></div><p class="gc-desc">A puzzle game built around a single dying torch. Manage your fuel, solve the route, survive the dark.</p><div class="gc-engine"><span class="ge-label">ENGINE</span><span class="ge-val">Godot 4</span></div><a href="#" class="gc-btn">PLAY NOW</a></div>
         </div>
       </div>
     </section>
